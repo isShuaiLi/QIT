@@ -1,0 +1,23 @@
+This is a code for ion trap with damping coefficient
+
+Integration: LK-4
+
+INPUT FILE: 
+task/taskiso/test1.set
+task/taskiso/test2.set
+task/taskiso/test3.set
+task/taskiso/test4.set
+
+RESULT FILE:
+result/nature_figS/trans1.xyz
+result/nature_figS/trans2.xyz
+result/nature_figS/trans3.xyz
+result/nature_figS/trans4.xyz
+
+Command:
+.\QIT.exe .\task\taskiso\test1.set
+.\QIT.exe .\task\taskiso\test2.set
+.\QIT.exe .\task\taskiso\test3.set
+.\QIT.exe .\task\taskiso\test4.set
+
+

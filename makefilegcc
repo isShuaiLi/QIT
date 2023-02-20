@@ -1,0 +1,46 @@
+SRC_DIR=src
+CCFLAGS= -g -O0 -std=c++0x -fopenmp -march=native -mtune=native -ffast-math -fopt-info-vec-optimized
+INC_DIR = 'E:\Mass Spectrometry\4-code\7. QIT_NC'
+CC=g++
+LDFLAGS=
+OBJ= globals.o vector.o  matrix.o fhandle.o mt.o coarse.o initdyn.o transdyn.o print.o main.o 
+
+all: QIT
+
+QIT: ${OBJ}
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -o $@ ${OBJ}
+
+fhandle.o: $(SRC_DIR)/fhandle.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<
+
+vector.o: $(SRC_DIR)/vector.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<
+
+
+matrix.o: $(SRC_DIR)/matrix.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<	
+
+mt.o: $(SRC_DIR)/mt.cc
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<
+
+coarse.o: $(SRC_DIR)/coarse.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<	
+
+globals.o: $(SRC_DIR)/globals.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<
+
+initdyn.o: $(SRC_DIR)/initdyn.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<	
+
+transdyn.o: $(SRC_DIR)/transdyn.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<
+
+print.o: $(SRC_DIR)/print.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<
+
+main.o: $(SRC_DIR)/main.cpp
+	$(CC) $(CCFLAGS) -I$(INC_DIR) $(LDFLAGS) -c $<
+
+
+clean:
+	rm *.o QIT

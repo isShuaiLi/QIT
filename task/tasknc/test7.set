@@ -1,0 +1,35 @@
+
+filename_trans  ./result/nature_fig1/Uac3/trans1.xyz
+
+//init
+use_randv       0
+initv           100   100   0
+
+// coarse
+numberofions    1 // 100-500 use same time
+radiusofions    4e-5
+mass_Da         365
+q_net           1
+
+// step
+nstep_trans     12000000  //10:2s
+dt_trans        1e-9  //1e-9 500K频率对上
+nstep_trans_save    100
+nstep_trans_show    200000
+
+//RF
+bUeff           0
+Urf             266.4646
+frf             1056000
+Uac             0.08517
+fac             154476
+
+damp1           0.663e-21
+damp2           0
+
+//T
+temperature     300
+
+// seed
+seed            120500;
+
